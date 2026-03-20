@@ -19,3 +19,10 @@ def mask_account_card(bank_info: str) -> str:
     else:
         bank_card = get_mask_card_number(new_number_str)
         return f"{" ".join(new_words_list)} {bank_card}"
+
+
+def get_date(data: str) -> str:
+    """возвращает строку с датой в формате ДД.ММ.ГГГГ"""
+    split_data = data.split("-")
+
+    return f"{split_data[2][0:2]}.{split_data[1]}.{split_data[0]}"
