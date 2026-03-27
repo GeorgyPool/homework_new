@@ -1,5 +1,5 @@
 def filter_by_state(list_of_dict, state_key="EXECUTED") -> list[dict]:
-    """Функция возвращает список словарей только тех где ключ равен 'EXECUTED'"""
+    """Функция возвращает список словарей только тех где ключ равен 'state_key' """
     new_list_dict = []
 
     for index in list_of_dict:
@@ -17,7 +17,7 @@ print(
             {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
             {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
         ],
-        "CANCELED",
+        "EXECUTED",
     )
 )
 
