@@ -17,4 +17,3 @@ def sort_by_date(list_of_dict: list[dict], key_data: bool = True) -> list[dict]:
     else:
         sorted_list = sorted(list_of_dict, key=lambda x: x["date"])
         return sorted_list
-
