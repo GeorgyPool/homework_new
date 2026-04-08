@@ -45,4 +45,26 @@ filter_by_state(list_of_dict, state_key="EXECUTED")
 sort_by_date(list_of_dict, key_data=True)
 #[{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
  {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}
+````
 
+# Папка *tests* :
+содержит тесты для модулей : 
++ [masks.py](src/masks.py)  - [test_masks.py](tests/test_masks.py)
++ [processing.py](src/processing.py) - [test_processing.py](tests/test_processing.py)
++ [widget.py](src/widget.py) - [test_widget.py](tests/test_widget.py)
+
+модуль [conftest.py](tests/conftest.py): содержит данные для тестов
+
+````
+для запуска тестов в терменале пропишите комманду :
+
+   pytest - запустит все тесты
+   
+   pytest tests/test_masks.py - запустит тест конкретного
+   модуля
+   
+   pytest --cov - запустит тесты с 
+   информацией о проценте покрытия
+````
+в папке [htmlcov](htmlcov) - содержится информация
+о покрытии кода в html формате
