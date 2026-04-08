@@ -1,7 +1,9 @@
+from typing import Any
+
 from src.masks import get_mask_account, get_mask_card_number  # type: ignore
 
 
-def mask_account_card(bank_info: str) -> str:
+def mask_account_card(bank_info: str) -> Any:
     """Возвращает строку с замаскированным номером для карт и счетов"""
     new_number_str = ""
     new_words_list = []
