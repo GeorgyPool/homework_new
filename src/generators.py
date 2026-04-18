@@ -1,4 +1,4 @@
-from typing import Iterator
+from typing import Iterator, Generator
 
 
 def filter_by_currency(list_transactions: list[dict], find: str = "USD") -> Iterator[dict]:
@@ -7,6 +7,12 @@ def filter_by_currency(list_transactions: list[dict], find: str = "USD") -> Iter
     for x in list_transactions:
         if x["operationAmount"]["currency"]["code"] == find:
             yield x
+
+
+def transaction_descriptions(list_transactions: list[dict]) -> Iterator[dict]:
+    """Возвращает итератор описания каждой операции по очереди"""
+    for x in list_transactions:
+        yield x["description"]
 
 
 transactions = (
@@ -94,3 +100,8 @@ if __name__ == "__main__":
     usd_transactions = filter_by_currency(transactions, "USD")
     for _ in range(2):
         print(next(usd_transactions))
+
+if __name__ == "__main__":
+    descriptions = transaction_descriptions(transactions)
+    for _ in range(5):
+        print(next(descriptions))
