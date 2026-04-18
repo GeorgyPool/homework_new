@@ -15,6 +15,14 @@ def transaction_descriptions(list_transactions: list[dict]) -> Iterator[dict]:
         yield x["description"]
 
 
+def card_number_generator(start: int = 1, stop: int = 9) -> Generator[str]:
+    """Генерирует номера банковских карт в формате XXXX XXXX XXXX XXXX
+    от 0000 0000 0000 0001 до 9999 9999 9999 9999"""
+    for num in range(start, stop + 1):
+       s = f"{str(num).zfill(16)}"
+       yield f"{s[:4]} {s[4:8]} {s[8:12]} {s[12:16]}"
+
+
 transactions = (
     [
         {
@@ -96,12 +104,15 @@ transactions = (
 )
 
 
+# if __name__ == "__main__":
+#     usd_transactions = filter_by_currency(transactions, "USD")
+#     for _ in range(2):
+#         print(next(usd_transactions))
+#
+# if __name__ == "__main__":
+#     descriptions = transaction_descriptions(transactions)
+#     for _ in range(5):
+#         print(next(descriptions))
 if __name__ == "__main__":
-    usd_transactions = filter_by_currency(transactions, "USD")
-    for _ in range(2):
-        print(next(usd_transactions))
-
-if __name__ == "__main__":
-    descriptions = transaction_descriptions(transactions)
-    for _ in range(5):
-        print(next(descriptions))
+    for card_number in card_number_generator(1, 5):
+        print(card_number)
