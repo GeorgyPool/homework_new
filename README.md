@@ -90,5 +90,5 @@ card_number_generator(1, 2)#0000 0000 0000 0001
    pytest --cov - запустит тесты с 
    информацией о проценте покрытия
 ````
-в папке [htmlcov](htmlcov) - содержится информация
+в папке [htmlcov](htmlcov) - [class_index.html](htmlcov/class_index.html) - содержится информация
 о покрытии кода в html формате
