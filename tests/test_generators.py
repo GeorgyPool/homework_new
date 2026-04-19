@@ -1,7 +1,6 @@
 import pytest
 
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
-from tests.conftest import corrected_info_for_filter_by_currency
 
 
 # Тест на корректность вывода генератора сортировки по заданному значению
