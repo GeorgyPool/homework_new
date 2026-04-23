@@ -47,11 +47,35 @@ sort_by_date(list_of_dict, key_data=True)
  {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}
 ````
 
++ МОДУЛЬ [generators.py](src/generators.py) - содержит генераторы
+````
+#функция filter_by_currency принимает список словарей и 
+возвращает итератор который выдает 
+транзакции по заданной валюте
+
+filter_by_currency(list[dict], find="USD")#выдаст все словари
+из списка содержащие операции по "USD"
+
+#функция transaction_descriptions принимает 
+список словарей и возвращает итератор 
+описания каждой операции по очереди
+
+transaction_descriptions(list[dict])#"Перевод организации"
+
+#функция card_number_generator принимает начальное и конечное 
+значение для генерации номера банковских карт
+
+card_number_generator(1, 2)#0000 0000 0000 0001
+                           #0000 0000 0000 0002
+ 
+````
+
 # Папка *tests* :
 содержит тесты для модулей : 
 + [masks.py](src/masks.py)  - [test_masks.py](tests/test_masks.py)
 + [processing.py](src/processing.py) - [test_processing.py](tests/test_processing.py)
 + [widget.py](src/widget.py) - [test_widget.py](tests/test_widget.py)
++ [generators.py](src/generators.py) - [test_generators.py](tests/test_generators.py)
 
 модуль [conftest.py](tests/conftest.py): содержит данные для тестов
 
@@ -66,5 +90,5 @@ sort_by_date(list_of_dict, key_data=True)
    pytest --cov - запустит тесты с 
    информацией о проценте покрытия
 ````
-в папке [htmlcov](htmlcov) - содержится информация
+в папке [htmlcov](htmlcov) - [class_index.html](htmlcov/class_index.html) - содержится информация
 о покрытии кода в html формате
