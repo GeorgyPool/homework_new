@@ -2,7 +2,7 @@ def log(filename=None):
     def log_inf(func):
         def wrapper(*args, **kwargs):
             try:
-                result = func(*args)
+                result = func(*args, **kwargs)
                 if isinstance(filename, str):
                     with open(filename, "w") as file:
                         file.write(f"{func.__name__} ok")
@@ -26,4 +26,4 @@ def my_func(x, y):
     return x + y
 
 
-print(my_func(5, ))
+print(my_func(5, 9))
