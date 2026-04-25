@@ -11,7 +11,7 @@ def log(filename=None):
                 result = func(*args, **kwargs)
                 if isinstance(filename, str):
                     with open(filename, "w") as file:
-                        file.write(f"{func.__name__} ok")
+                        file.write(f"{func.__name__} ok, результат: {result}")
                         return f"записано в лог файла {filename}"
                 else:
                     return f"{func.__name__} ok, результат:{result}"
@@ -20,6 +20,7 @@ def log(filename=None):
                 if isinstance(filename, str):
                     with open(filename, "w") as file:
                         file.write(error_mes)
+                    return f"записано в лог файла {filename}"
                 else:
                     return error_mes
 
@@ -28,9 +29,9 @@ def log(filename=None):
     return log_inf
 
 
-@log("mylog.txt")
+@log()
 def my_func(x, y):
     return x + y
 
 
-print(my_func(1, 2))
+print(my_func(1))
