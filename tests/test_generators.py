@@ -25,8 +25,9 @@ def test_filter_by_currency(corrected_info_for_filter_by_currency):
         "to": "Счет 75651667383060284188",
     }
 
-#тест на вывод при отсутствии ключа "code" в словаре
-#при отсутствии ключа пропускает словарь
+
+# тест на вывод при отсутствии ключа "code" в словаре
+# при отсутствии ключа пропускает словарь
 def test_dont_have_key_in_list(dot_have_key_in_list):
     done = filter_by_currency(dot_have_key_in_list)
     assert next(done) == {
@@ -49,16 +50,18 @@ def test_dont_have_key_in_list(dot_have_key_in_list):
         "to": "Visa Platinum 8990922113665229",
     }
 
+
 # тест функции transaction_descriptions на положительный результат
 def test_corrected_result_transaction_descriptions(corrected_info_for_filter_by_currency):
-  done = transaction_descriptions(corrected_info_for_filter_by_currency)
-  assert next(done) == "Перевод организации"
-  assert next(done) == "Перевод со счета на счет"
-  assert next(done) == "Перевод со счета на счет"
-  assert next(done) == "Перевод с карты на карту"
-  assert next(done) == "Перевод организации"
+    done = transaction_descriptions(corrected_info_for_filter_by_currency)
+    assert next(done) == "Перевод организации"
+    assert next(done) == "Перевод со счета на счет"
+    assert next(done) == "Перевод со счета на счет"
+    assert next(done) == "Перевод с карты на карту"
+    assert next(done) == "Перевод организации"
 
-#тест на вызов ошибки при передачах пустого списка
+
+# тест на вызов ошибки при передачах пустого списка
 def test_empty_list_transaction_descriptions():
     # Создаём итератор
     iterator = transaction_descriptions([])
@@ -66,20 +69,23 @@ def test_empty_list_transaction_descriptions():
     with pytest.raises(ValueError):
         next(iterator)
 
-#тесты для функции card_number_generator
+
+# тесты для функции card_number_generator
 @pytest.mark.parametrize("a, b, c, d", [(1, 2, "0000 0000 0000 0001", "0000 0000 0000 0002")])
-def test_card_number_generator(a, b , c, d):
+def test_card_number_generator(a, b, c, d):
     done = card_number_generator(a, b)
     assert next(done) == c
     assert next(done) == d
 
-#тест на вызов ошибки при передачах на положительного числа
+
+# тест на вызов ошибки при передачах на положительного числа
 def test_card_number_generator_invalid():
     iters = card_number_generator(0)
     with pytest.raises(ValueError):
         next(iters)
 
-#тест на поднятие ошибки при передаче слишком большого числа
+
+# тест на поднятие ошибки при передаче слишком большого числа
 def test_card_number_generator_invalid_two():
     iters = card_number_generator(1, 99999999999999999)
     with pytest.raises(ValueError):
