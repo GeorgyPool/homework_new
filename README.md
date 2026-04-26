@@ -70,12 +70,24 @@ card_number_generator(1, 2)#0000 0000 0000 0001
  
 ````
 
++ МОДУЛЬ [decorators.py](src/decorators.py) - содержит декораторы
+````
+декоратор @log(): при отсутствии аргументов в декораторе выводи
+логи в консоль, при передачи аргументов записывает логи в файл
+
+@log("log.txt")
+def func()      #запишит работу функции в файл с названием переданного аргумента
+return
+````
+
+
 # Папка *tests* :
 содержит тесты для модулей : 
 + [masks.py](src/masks.py)  - [test_masks.py](tests/test_masks.py)
 + [processing.py](src/processing.py) - [test_processing.py](tests/test_processing.py)
 + [widget.py](src/widget.py) - [test_widget.py](tests/test_widget.py)
 + [generators.py](src/generators.py) - [test_generators.py](tests/test_generators.py)
++ [decorators.py](src/decorators.py) - [test_decorators.py](tests/test_decorators.py)
 
 модуль [conftest.py](tests/conftest.py): содержит данные для тестов
 
