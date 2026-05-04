@@ -19,11 +19,7 @@ def convert_currency(transactions: dict) -> float:
         load_dotenv()
         head = {"apikey": os.getenv("API_KEY")}
         url = getenv("URL")
-        payload = {
-            "amount": amount_c,
-            "from": first_c,
-            "to": "RUB"
-        }
+        payload = {"amount": amount_c, "from": first_c, "to": "RUB"}
 
         response = requests.request("GET", url, headers=head, params=payload)
         return float(response.json()["result"])
