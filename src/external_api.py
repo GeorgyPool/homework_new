@@ -1,4 +1,5 @@
 import os
+from os import getenv
 
 import requests
 from dotenv import load_dotenv
@@ -12,15 +13,19 @@ def convert_currency(transactions: dict) -> float:
         return float(transactions["operationAmount"]["amount"])
 
     else:
-        load_dotenv()
-        payload = {}
-        head = {"apikey": os.getenv("API_KEY")}
-
         first_c = transactions["operationAmount"]["currency"]["code"]
         amount_c = transactions["operationAmount"]["amount"]
 
-        url = f"https://api.apilayer.com/exchangerates_data/convert?to=RUB&from={first_c}&amount={amount_c}"
-        response = requests.request("GET", url, headers=head, data=payload)
+        load_dotenv()
+        head = {"apikey": os.getenv("API_KEY")}
+        url = getenv("URL")
+        payload = {
+            "amount": amount_c,
+            "from": first_c,
+            "to": "RUB"
+        }
+
+        response = requests.request("GET", url, headers=head, params=payload)
         return float(response.json()["result"])
 
 
