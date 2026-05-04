@@ -18,7 +18,7 @@ def convert_currency(transactions: dict) -> float:
 
         load_dotenv()
         head = {"apikey": os.getenv("API_KEY")}
-        url = getenv("URL")
+        url = f"https://api.apilayer.com/exchangerates_data/convert"
         payload = {"amount": amount_c, "from": first_c, "to": "RUB"}
 
         response = requests.request("GET", url, headers=head, params=payload)
