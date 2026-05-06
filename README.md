@@ -121,3 +121,9 @@ convert_currency({transsctions}) #возвращает сумму, если су
 ````
 в папке [htmlcov](htmlcov) - [class_index.html](htmlcov/class_index.html) - содержится информация
 о покрытии кода в html формате
+
+
+# Папка *logs* :
+````
+содержит логи о выполнении модулей masks.py и utils.py
+````
