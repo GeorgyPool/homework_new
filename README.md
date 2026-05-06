@@ -6,7 +6,7 @@
 #в командной строке/терминале введите:
 git clone git@github.com:GeorgyPool/homework_new.git
 ````
-# Зависимости :
+# Зависимости:
 + Python 3.14.3 - проект использует эту версию *python*
 
 # Работа с модулями:
@@ -79,15 +79,32 @@ card_number_generator(1, 2)#0000 0000 0000 0001
 def func()      #запишит работу функции в файл с названием переданного аргумента
 return
 ````
++ МОДУЛЬ [utils.py](src/utils.py) - содержит функционал для чтения json файлов и возвращает список python
+````
+#функия return_list_json_file():
 
+#принимает путь до файла транзакций json
+return_list_json_file("../data/operations.json") # [{operations}] список транзакций
+````
++ МОДУЛЬ [external_api.py](src/external_api.py) - содержит функционал конвертации валюты
+````
+#Функция convert_currency():
+#принимает словарь с информацией о транзакциях {transsctions}
+
+convert_currency({transsctions}) #возвращает сумму, если сумма["amount"] указана в рублях["code"] == RUB
+                                 #если сумма транзакции указана в EUR или USD обращается к API для конвертации
+                                 #валюты и возвращает ее в рублях 
+````
 
 # Папка *tests* :
-содержит тесты для модулей : 
+содержит тесты для модулей: 
 + [masks.py](src/masks.py)  - [test_masks.py](tests/test_masks.py)
 + [processing.py](src/processing.py) - [test_processing.py](tests/test_processing.py)
 + [widget.py](src/widget.py) - [test_widget.py](tests/test_widget.py)
 + [generators.py](src/generators.py) - [test_generators.py](tests/test_generators.py)
 + [decorators.py](src/decorators.py) - [test_decorators.py](tests/test_decorators.py)
++ [utils.py](src/utils.py) - [test_utils.py](tests/test_utils.py)
++ [external_api.py](src/external_api.py) - [test_external_api.py](tests/test_external_api.py)
 
 модуль [conftest.py](tests/conftest.py): содержит данные для тестов
 
