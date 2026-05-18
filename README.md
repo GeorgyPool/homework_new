@@ -8,6 +8,8 @@ git clone git@github.com:GeorgyPool/homework_new.git
 ````
 # Зависимости:
 + Python 3.14.3 - проект использует эту версию *python*
++ pandas
++ openpyxl
 
 # Работа с модулями:
 + МОДУЛЬ [masks.py](src/masks.py) - обрабатывает номер счета/карты
@@ -95,6 +97,20 @@ convert_currency({transsctions}) #возвращает сумму, если су
                                  #если сумма транзакции указана в EUR или USD обращается к API для конвертации
                                  #валюты и возвращает ее в рублях 
 ````
++ МОДУЛЬ [read_table.py](src/read_table.py) - содержит функционал для чтения табличных форматов
+````
+Принимает путь до файлов и возвращает список словарей
+
+функция:
+read_to_csv(путь до файла.csv)
+# [{"col1": [1, 2], "col2": [3, 4]}]
+# результат [{"col1": 1, "col2": 3}, {"col1": 2, "col2": 4}]
+
+функция:
+read_to_xl(путь до файла.xlsx)
+# [{"col1": [1, 2], "col2": [3, 4]}]
+# результат [{"col1": 1, "col2": 3}, {"col1": 2, "col2": 4}]
+````
 
 # Папка *tests* :
 содержит тесты для модулей: 
@@ -105,6 +121,7 @@ convert_currency({transsctions}) #возвращает сумму, если су
 + [decorators.py](src/decorators.py) - [test_decorators.py](tests/test_decorators.py)
 + [utils.py](src/utils.py) - [test_utils.py](tests/test_utils.py)
 + [external_api.py](src/external_api.py) - [test_external_api.py](tests/test_external_api.py)
++ [read_table.py](src/read_table.py) - [test_read_table.py](tests/test_read_table.py) 
 
 модуль [conftest.py](tests/conftest.py): содержит данные для тестов
 
