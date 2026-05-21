@@ -111,6 +111,15 @@ read_to_xl(путь до файла.xlsx)
 # [{"col1": [1, 2], "col2": [3, 4]}]
 # результат [{"col1": 1, "col2": 3}, {"col1": 2, "col2": 4}]
 ````
++ МОДУЛЬ [search.py](src/search.py) - содержит функционал для поиска
+````
+process_bank_search(list[dict], str-поиска) if list['description'] == str-поиска
+то отфильтроввывает и возвращает список словарей
+
+process_bank_operations(list[dict], list['description']) if list[dict] == list['description']
+то возвращает словарь где ключ описание а значение колличество упоминаний
+{list['description']: колличество упоминаний}
+````
 
 # Папка *tests* :
 содержит тесты для модулей: 
@@ -121,7 +130,8 @@ read_to_xl(путь до файла.xlsx)
 + [decorators.py](src/decorators.py) - [test_decorators.py](tests/test_decorators.py)
 + [utils.py](src/utils.py) - [test_utils.py](tests/test_utils.py)
 + [external_api.py](src/external_api.py) - [test_external_api.py](tests/test_external_api.py)
-+ [read_table.py](src/read_table.py) - [test_read_table.py](tests/test_read_table.py) 
++ [read_table.py](src/read_table.py) - [test_read_table.py](tests/test_read_table.py)
++ [search.py](src/search.py) - [test_search.py](tests/test_search.py)
 
 модуль [conftest.py](tests/conftest.py): содержит данные для тестов
 
