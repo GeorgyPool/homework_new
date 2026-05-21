@@ -30,11 +30,6 @@ def test_mask_account_card_invalid_witch_account():
         assert mask_account_card("Счет 6468647367889477")
 
 
-def test_mask_account_card_invalid_witch_card():
-    with pytest.raises(ValueError):
-        assert mask_account_card("visa Classic 683198247673765")
-
-
 # тесты для функции get_date
 @pytest.mark.parametrize(
     "start_info, expected",

@@ -10,7 +10,7 @@ logger = logging.getLogger("masks")
 logger.setLevel(logging.DEBUG)
 
 # установка конфигурации логов
-file_handler = logging.FileHandler(f"{os.path.join('logs', today_str)}_masks.log","w", encoding="utf-8")
+file_handler = logging.FileHandler(f"{os.path.join('logs', today_str)}_masks.log", "w", encoding="utf-8")
 file_formater = logging.Formatter("%(asctime)s %(funcName)s: %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formater)
 logger.addHandler(file_handler)

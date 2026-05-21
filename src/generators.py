@@ -9,17 +9,16 @@ def filter_by_currency(list_transactions: list[dict], find: str = "USD") -> Iter
         # проверяет есть ли ключ "code" в списке
         # при отсутствии ключа пропускает транзакцию
         if "operationAmount" in trans:
-            if "code" in trans['operationAmount']['currency']:
+            if "code" in trans["operationAmount"]["currency"]:
                 code = trans["operationAmount"]["currency"]["code"]
                 if find == code:
                     yield trans
-        elif 'currency_code' in trans:
-            code = trans['currency_code']
+        elif "currency_code" in trans:
+            code = trans["currency_code"]
             if find == code:
                 yield trans
         else:
             continue
-
 
 
 def transaction_descriptions(list_transactions: list[dict]) -> Iterator[dict]:
