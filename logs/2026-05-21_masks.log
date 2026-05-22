@@ -1,0 +1,38 @@
+2026-05-21 16:30:21,077 get_mask_card_number: INFO: Вызов функции
+2026-05-21 16:30:21,077 get_mask_card_number: INFO: Успешное завершение функции
+2026-05-21 16:30:21,077 get_mask_account: INFO: Вызов функции
+2026-05-21 16:30:21,077 get_mask_account: INFO: Успешное выполнение
+2026-05-21 16:30:22,166 get_mask_card_number: INFO: Вызов функции
+2026-05-21 16:30:22,166 get_mask_card_number: INFO: Успешное завершение функции
+2026-05-21 16:30:22,167 get_mask_card_number: INFO: Вызов функции
+2026-05-21 16:30:22,168 get_mask_card_number: ERROR: Введены не корректные символы
+2026-05-21 16:30:22,169 get_mask_card_number: INFO: Вызов функции
+2026-05-21 16:30:22,169 get_mask_card_number: ERROR: Не корректная длина номера карты
+2026-05-21 16:30:22,170 get_mask_card_number: INFO: Вызов функции
+2026-05-21 16:30:22,170 get_mask_card_number: ERROR: Не корректная длина номера карты
+2026-05-21 16:30:22,173 get_mask_card_number: INFO: Вызов функции
+2026-05-21 16:30:22,173 get_mask_card_number: INFO: Успешное завершение функции
+2026-05-21 16:30:22,176 get_mask_card_number: INFO: Вызов функции
+2026-05-21 16:30:22,176 get_mask_card_number: INFO: Успешное завершение функции
+2026-05-21 16:30:22,177 get_mask_card_number: INFO: Вызов функции
+2026-05-21 16:30:22,177 get_mask_card_number: INFO: Успешное завершение функции
+2026-05-21 16:30:22,179 get_mask_account: INFO: Вызов функции
+2026-05-21 16:30:22,179 get_mask_account: INFO: Успешное выполнение
+2026-05-21 16:30:22,182 get_mask_account: INFO: Вызов функции
+2026-05-21 16:30:22,182 get_mask_account: INFO: Успешное выполнение
+2026-05-21 16:30:22,183 get_mask_account: INFO: Вызов функции
+2026-05-21 16:30:22,183 get_mask_account: ERROR: Не корректная длина номера счета
+2026-05-21 16:30:22,185 get_mask_account: INFO: Вызов функции
+2026-05-21 16:30:22,185 get_mask_account: ERROR: Не корректная длина номера счета
+2026-05-21 16:30:22,268 get_mask_card_number: INFO: Вызов функции
+2026-05-21 16:30:22,269 get_mask_card_number: INFO: Успешное завершение функции
+2026-05-21 16:30:22,270 get_mask_account: INFO: Вызов функции
+2026-05-21 16:30:22,270 get_mask_account: INFO: Успешное выполнение
+2026-05-21 16:30:22,272 get_mask_card_number: INFO: Вызов функции
+2026-05-21 16:30:22,272 get_mask_card_number: INFO: Успешное завершение функции
+2026-05-21 16:30:22,274 get_mask_account: INFO: Вызов функции
+2026-05-21 16:30:22,274 get_mask_account: INFO: Успешное выполнение
+2026-05-21 16:30:22,275 get_mask_card_number: INFO: Вызов функции
+2026-05-21 16:30:22,276 get_mask_card_number: INFO: Успешное завершение функции
+2026-05-21 16:30:22,277 get_mask_account: INFO: Вызов функции
+2026-05-21 16:30:22,277 get_mask_account: INFO: Успешное выполнение

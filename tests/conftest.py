@@ -235,3 +235,14 @@ def currency_rub():
         "date": "2019-08-26T10:50:58.294041",
         "operationAmount": {"amount": "31957.58", "currency": {"name": "руб.", "code": "RUB"}},
     }
+
+
+# фикстуры для test_search.py
+@pytest.fixture
+def search_dict():
+    return [{"description": "its_ok"}]
+
+
+@pytest.fixture
+def search_not_description():
+    return [{"code": "RUB"}]
