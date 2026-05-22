@@ -24,7 +24,7 @@ def mask_account_card(bank_info: str) -> Any:
     # проверяет чтобы длина номера банковской карты всегда равнялась 16, в другом случае выбрасывает ошибку
     if "Счет" not in new_words_list:
         if len(new_number_str) < 16 or len(new_number_str) > 16:
-            return "Не корректная длина номера банковской карты"
+            return ""
 
     # возвращает маску счета
     if "Счет" in new_words_list:
